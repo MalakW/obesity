@@ -1,6 +1,3 @@
-# Author    : Mohamad Kheir EL Daouk
-# Created on: Sun Sep 25 19:18:27 2022
-
 import hydralit_components as hc
 from streamlit_option_menu import option_menu
 import streamlit as st
