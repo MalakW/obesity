@@ -58,7 +58,7 @@ st.title("Obesity: An Epidemic")
 # Menu bar
 selected = option_menu(
     menu_title = None,
-    options = ["Home", "Global Obesity", "Top 20 Countries", "Obesity by Subregion", "Obesity by Gender", "BMI Calculator"],
+    options = ["Home", "Global Obesity", "Top 20 Countries", "Obesity by Gender", "BMI Calculator"],
     menu_icon = "cast",
     icons = ['house', 'globe', 'bar-chart', 'gear', 'pie-chart', 'calculator'],
     default_index = 0,
