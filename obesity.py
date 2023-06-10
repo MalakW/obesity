@@ -184,41 +184,40 @@ if selected == "Top 20 Countries":
 # Page 4: Obesity by Subregion
 if selected == "Obesity by Subregion":
     
-    sel_col, dummy_col = st.columns(2, gap="large")
+    sel_col, dummy_col = st.columns(2)
     with sel_col:
-        sel_year2 = 2016
-        sel_year2 = st.number_input('Select a year',min_value=1975, max_value=2016, value=2016, step=1)
+        sel_year2 = st.number_input('Select a year', min_value=1975, max_value=2016, value=2016, step=1)
 
-    col1, col2 = st.columns(2, gap="large") 
+    col1, col2 = st.columns(2) 
     with col1:      
-        #Visualization no. 5
-        #st.subheader("Obesity Prevalence Among Adults in 2016 for the MENA Region")
+        # Visualization no. 5
         st.subheader("Obesity Prevalence Among Adults in the MENA Region")
                       
         MENAData = data.query("Country in ['Algeria', 'Bahrain', 'Egypt', 'Iran', 'Iran (Islamic Republic of)', 'Iraq', 'Israel', 'Jordan', 'Kuwait', 'Lebanon','Libya', 'Morocco', 'Oman', 'Qatar', 'Saudi Arabia', 'Syria', 'Syrian Arab Republic', 'Tunisia', 'United Arab Emirates', 'Yemen']")
-        tempdf = MENAData.query("Year=="+str(sel_year2))
+        tempdf = MENAData.query("Year==" + str(sel_year2))
 
         fig = px.line_polar(tempdf, r='Obesity', theta='Country', color='Sex', line_close=True, 
-                            line_shape='spline', range_r=[0,47])
-        st.write(fig)
+                            line_shape='spline', range_r=[0, 47])
+        st.plotly_chart(fig)
 
         if sel_year2 == 2016:
-            st.info("**We noticed that the female obesity prevalence rate is significantly higher than that of male with the exception of occupied Palestine. In addition, the highest rates are noticed in Kuwait, Qatar, and Saudi Arabia.**")
+            st.info("**We noticed that the female obesity prevalence rate is significantly higher than that of males, with the exception of occupied Palestine. In addition, the highest rates are noticed in Kuwait, Qatar, and Saudi Arabia.**")
 
     with col2:
         # Visualization no. 3
         st.subheader("Obesity Prevalence Among Adults by Continent, 1975-2016")
         fig = px.bar(obesityByContinent, x="Continent", y="WeightedObesity", color="Continent",
-                    animation_frame="Year", animation_group="Continent", range_y=[0,45])
+                    animation_frame="Year", animation_group="Continent", range_y=[0, 45])
 
         fig.update_layout(
             yaxis_title="Obesity Prevalence (%)",
-            paper_bgcolor="rgba(0,0,0,0)", 
-            plot_bgcolor="rgba(0,0,0,0)")
+            paper_bgcolor="rgba(0, 0, 0, 0)", 
+            plot_bgcolor="rgba(0, 0, 0, 0)")
 
         fig.update_xaxes(showgrid=False)
         fig.update_yaxes(showgrid=False)
-        st.write(fig)
+        st.plotly_chart(fig)
+
 
 #----------------------------------------------------------------------------------------------------#
 # Page 5: Obesity by Gender
