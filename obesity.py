@@ -53,8 +53,6 @@ def load_lottiefile(filepath: str):
 # 
 #----------------------------------------------------------------------------------------------------#
 # Main page
-st.title("Obesity: An Epidemic")
-
 # Menu bar
 selected = option_menu(
     menu_title = None,
