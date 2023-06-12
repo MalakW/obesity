@@ -17,7 +17,7 @@ cf.go_offline()
 
 st.set_page_config(layout = 'wide')
 
-@st.cache_data
+@st.cache
 def load_data():
     df_data = pd.read_csv("data/data.csv")
     df_obesity = pd.read_csv("data/obesity.csv")
