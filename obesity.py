@@ -132,7 +132,7 @@ if selected == "Home":
             <div style='background-color: rgba(251, 144, 53, 0.5); color: black; padding: 10px; border-radius: 5px;'>
             <ul style='color: black; list-style-type: disc; padding-left: 20px;'>
             <li><b>Type 2 diabetes</b></li>
-            <li><b>Cardiovascular Disease:</b></li>
+            <li><b>Cardiovascular Disease</b></li>
             <li><b>Joint Problems</b></li>
             <li><b>Sleep Apnea</b></li>
             <li><b>High cholesterol</b></li>
