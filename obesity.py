@@ -1,8 +1,5 @@
-import hydralit_components as hc
 from streamlit_option_menu import option_menu
 import streamlit as st
-from streamlit_lottie import st_lottie
-import json
 import pandas as pd
 import plotly.offline as py
 import plotly.graph_objects as go
@@ -10,14 +7,14 @@ import plotly.express as px
 from plotly.offline import init_notebook_mode
 init_notebook_mode(connected = True)
 import base64
-import os
 import cufflinks as cf
 from plotly.subplots import make_subplots
+
 cf.go_offline()
 
 st.set_page_config(layout = 'wide')
 
-@st.cache
+@st.cache_data
 def load_data():
     df_data = pd.read_csv("data/data.csv")
     df_obesity = pd.read_csv("data/obesity.csv")
@@ -52,8 +49,8 @@ def calculate_bmi(weight_kg, height_cm):
 
 #icons next to title
 # File paths to the icons
-icon1_path = "body-mass-index.png"
-icon2_path = "body-mass-index1.png"
+icon1_path = "C:\\Users\\malak\\OneDrive\\Desktop\\obesity-main\\body-mass-index1.png"
+icon2_path = "C:\\Users\\malak\\OneDrive\\Desktop\\obesity-main\\body-mass-index.png"
 
 # Read the icons as bytes
 with open(icon1_path, "rb") as icon1_file:
@@ -276,13 +273,12 @@ if selected == "Global Obesity":
         #st.info("**We observe a concerning trend where the prevalence rates of obesity and overweight continue to escalate.**")
 #-------------------------------------------------#
 # Page 4: Top 20 Countries
-import streamlit as st
-import plotly.graph_objects as go
 
 if selected == "Top 20 Countries":
     # Visualization no. 5
     st.subheader(f"Top 20 Countries by Mean Obesity Prevalence Among Adults")
     sel_col, disp_col = st.columns([1, 4], gap="large")
+    
     with sel_col:
         sel_year = st.slider("Select a year", min_value=1976, max_value=2016, value=2016, step=1, format="%d", key="my_slider")
 
