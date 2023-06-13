@@ -141,7 +141,7 @@ if selected == "Home":
             unsafe_allow_html=True,
         )
 
-        # Prevention of obesity
+        # recommendation of obesity
         st.header("Recommendations")
         st.markdown(
             """
