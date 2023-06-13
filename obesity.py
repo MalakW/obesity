@@ -142,7 +142,7 @@ if selected == "Home":
         )
 
         # Prevention of obesity
-        st.header("Prevention")
+        st.header("Recommendations")
         st.markdown(
             """
             <div style='background-color: rgba(21, 133, 164, 0.5); color: black; padding: 10px; border-radius: 5px;'>
