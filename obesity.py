@@ -49,8 +49,8 @@ def calculate_bmi(weight_kg, height_cm):
 
 #icons next to title
 # File paths to the icons
-icon1_path = "C:\\Users\\malak\\OneDrive\\Desktop\\obesity-main\\body-mass-index1.png"
-icon2_path = "C:\\Users\\malak\\OneDrive\\Desktop\\obesity-main\\body-mass-index.png"
+icon1_path = "body-mass-index.png"
+icon2_path = "body-mass-index1.png"
 
 # Read the icons as bytes
 with open(icon1_path, "rb") as icon1_file:
